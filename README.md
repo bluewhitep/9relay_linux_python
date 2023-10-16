@@ -1,6 +1,9 @@
 # 9relay_linux_python
 **Use python control ADUBRU9 board on linux**
 
+Product page:https://bit-trade-one.co.jp/adubru/
+<img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_696/https://bit-trade-one.co.jp/wp/wp-content/uploads/2019/08/3b41b291e659768dc80db779f12b911e.jpg">
+
 # Install
 ``` bash
 git clone https://github.com/bluewhitep/9relay_linux_python
