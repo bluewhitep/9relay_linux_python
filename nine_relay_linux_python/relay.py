@@ -24,7 +24,13 @@ class relay:
         else:
             self.all_off()
             
-        
+    def __get_index(self, target):
+        index_list = []
+        for index, value in enumerate(self.status):
+            if value == target:
+                index_list.append(index)
+        return index_list
+    
     def on(self, relay_num:int or list) -> None:
         """ Relay on
 
@@ -51,18 +57,20 @@ class relay:
             for i in relay_num:
                 if i < 0 or i > 8:
                     raise ValueError("relay_num must be 0 to 8")
+            
+            last_status = self.__get_index(1)
+            relay_num.extend(last_status)
+            
+            send_buffter = [0] * 65
+            send_buffter[1] = 0x32
+            send_buffter[2] = 9
+            for num in relay_num:
+                send_buffter[num + 3] = 1
                 
-                send_buffter = [0] * 65
-                send_buffter[1] = 0x32
-                send_buffter[2] = 9
-                for num in relay_num:
-                    send_buffter[num + 3] = 1
-                
-                self.h.write(send_buffter)
-                for num in relay_num:
-                    self.status[num] = 1
+            self.h.write(send_buffter)
+            for num in relay_num:
+                self.status[num] = 1
         
-    
     def off(self, relay_num:int or list) -> None:
         """ Relay off
 
@@ -89,19 +97,26 @@ class relay:
             for i in relay_num:
                 if i < 0 or i > 8:
                     raise ValueError("relay_num must be 0 to 8")
-                
-                send_buffter = [0] * 65
-                send_buffter[1] = 0x32
-                send_buffter[2] = 9
-                for num in relay_num:
-                    send_buffter[num + 3] = 0
-                
-                self.h.write(send_buffter)
-                for num in relay_num:
-                    self.status[num] = 0
-                
+            
+            send_buffter = [0] * 65
+            send_buffter[1] = 0x32
+            send_buffter[2] = 9
+            
+            last_status = self.__get_index(1)
+            for num in last_status:
+                send_buffter[num + 3] = 1
+            for num in relay_num:
+                send_buffter[num + 3] = 0
+            
+            self.h.write(send_buffter)
+            for num in relay_num:
+                self.status[num] = 0
+            
     def all_on(self) -> None:
         self.on([0,1,2,3,4,5,6,7,8])
         
     def all_off(self) -> None:
         self.off([0,1,2,3,4,5,6,7,8])
+        
+    def get_status(self) -> list:
+        return self.status.copy()

@@ -1,4 +1,4 @@
-# 9relay_linux_python
+# 9 relay_linux_python
 **Use python control ADUBRU9 board on linux**
 
 Product page:https://bit-trade-one.co.jp/adubru/
@@ -6,14 +6,14 @@ Product page:https://bit-trade-one.co.jp/adubru/
 
 # Install
 ``` bash
-git clone https://github.com/bluewhitep/9relay_linux_python
-cd ./9relay_linux_python
-pip install -r ./requirements.txt
+git clone https://github.com/bluewhitep/nine_relay_linux_python
+cd ./nine_relay_linux_python
+pip install -r requirements.txt
 ```
 
 # Usage
 ``` python
-from 9relay_linux_python.relay import relay
+from nine_relay_linux_python.relay import relay
 
 relay_console = relay()
 
@@ -30,9 +30,9 @@ relay_console.off(relay_num=0) # RY1 contorl
 # mutil relay on/off
 relay_console.on(relay_num=[0,2,4])  # RY1,3,5 contorl
 relay_console.off(relay_num=[0,2,4]) # RY1,3,5 contorl
-
+t
 # get relays status
-print(relay_console.status) #0:off  1:on
+print(relay_console.get_status()) #0:off  1:on
 ```
 
 # Document
