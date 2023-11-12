@@ -1,4 +1,8 @@
 # 9 relay_linux_python
+
+[日本語](./README_ja.md)
+
+---
 **Use python control ADUBRU9 board on linux**
 
 Product page:https://bit-trade-one.co.jp/adubru/
@@ -57,7 +61,7 @@ Args:
     ValueError: relay_num must be 0 to 8
 ```
 
----
+### Memo
 ADUBRU9 default infomation:
 * Vendor ID: 0x22ea
 * Product ID: 0x005f
