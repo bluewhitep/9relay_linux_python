@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
 
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
+    
 setup(
     name='nine_relay_linux_python',
-    version='0.1.0',
+    version='0.1.1',
     packages=find_packages(),
-    install_requires=[
-        'hidapi'
-    ],
+    install_requires=required,
     author='Bluewhitep',
     author_email='20318684+bluewhitep@users.noreply.github.com',
     description='Use python control ADUBRU9 board on linux',

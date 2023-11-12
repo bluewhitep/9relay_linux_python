@@ -8,12 +8,16 @@ Product page:https://bit-trade-one.co.jp/adubru/
 ``` bash
 git clone https://github.com/bluewhitep/nine_relay_linux_python
 cd ./nine_relay_linux_python
-pip install -r requirements.txt
+pip install .
+```
+or
+``` bash
+pip install git+https://github.com/bluewhitep/nine_relay_linux_python.git
 ```
 
 # Usage
 ``` python
-from nine_relay_linux_python.relay import relay
+from nine_relay_linux_python import relay
 
 relay_console = relay()
 
