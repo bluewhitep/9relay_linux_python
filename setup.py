@@ -13,7 +13,7 @@ setup(
     description='Use python control ADUBRU9 board on linux',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/bluewhitep/nine_relay_linux_python',  # 可以是你的代码仓库链接
+    url='https://github.com/bluewhitep/nine_relay_linux_python',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
