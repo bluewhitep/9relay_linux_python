@@ -18,6 +18,10 @@ or
 ``` bash
 pip install git+https://github.com/bluewhitep/nine_relay_linux_python.git
 ```
+## Add usb rules
+``` bash
+curl https://github.com/bluewhitep/nine_relay_linux_python/setup.sh | bash
+```
 
 # Usage
 ``` python
