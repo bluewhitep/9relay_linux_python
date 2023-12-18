@@ -38,7 +38,7 @@ relay_console.off(relay_num=0) # RY1 contorl
 # mutil relay on/off
 relay_console.on(relay_num=[0,2,4])  # RY1,3,5 contorl
 relay_console.off(relay_num=[0,2,4]) # RY1,3,5 contorl
-t
+
 # get relays status
 print(relay_console.get_status()) #0:off  1:on
 ```
