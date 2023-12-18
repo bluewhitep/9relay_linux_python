@@ -1,6 +1,6 @@
 # 9 relay_linux_python
 
-[日本語](./README_Japanese.md)
+[日本語](./readmes/README_Japanese.md)
 
 ---
 **Use python control ADUBRU9 board on linux**
