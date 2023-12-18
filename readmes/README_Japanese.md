@@ -13,6 +13,10 @@ pip install .
 ```bash
 pip install git+https://github.com/bluewhitep/nine_relay_linux_python.git
 ```
+## Add usb rules
+``` bash
+curl https://github.com/bluewhitep/nine_relay_linux_python/setup.sh | bash
+```
 
 # 使用方法
 インストール後、Pythonスクリプトを使用してリレーを制御できます。リレーの使用方法についての基本ガイドは以下の通りです：
